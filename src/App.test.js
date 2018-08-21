@@ -2,7 +2,8 @@ import {
     hello,
     sum,
     removeJackNames,
-    createPerson
+    createPerson,
+    fetchUser
 } from "./App";
 
 /**
@@ -93,4 +94,26 @@ describe('Test for Regex', () => {
     it('There is no I in team', () => {
         expect('team').not.toMatch(/I/i);
     });
+});
+
+/**
+ * Test Api calls
+ */
+describe('Test async api call', () => {
+    // Async await
+    it(`It's a Deadpool movie`, async () => {
+        expect.assertions(1);
+        const data = await fetchUser();
+
+        expect(data.original_title).toMatch(/Deadpool/);
+    });
+
+    // Promise
+    it(`It's a Deadpool 2`, () => {
+        expect.assertions(1);
+        return fetchUser().then(data => {
+            expect(data.original_title).toBe('Deadpool 2')
+        })
+    });
+
 });
