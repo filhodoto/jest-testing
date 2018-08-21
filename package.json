@@ -7,6 +7,9 @@
     "start": "parcel index.html",
     "test": "jest --watchAll"
   },
+  "jest": {
+    "testURL": "http://localhost"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
