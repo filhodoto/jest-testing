@@ -25,4 +25,15 @@ export const sum = (a, b) => {
 export const removeJackNames = names => {
     // Filter array for names including Upper and Lower case
     return names.filter(name => !name.toLowerCase().includes('jack'));
-}
+};
+
+/**
+ * Functions that returns simple object with values
+ * @returns {{name: string, surname: string}}
+ */
+export const createPerson = () => {
+    return {
+        name: 'Chuck',
+        surname: 'Norris'
+    }
+};
